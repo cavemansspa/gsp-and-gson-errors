@@ -1,7 +1,6 @@
 package githubissue
 
 import grails.core.GrailsApplication
-import grails.util.Environment
 import grails.plugins.*
 
 class ApplicationController implements PluginManagerAware {
@@ -11,5 +10,9 @@ class ApplicationController implements PluginManagerAware {
 
     def index() {
         [grailsApplication: grailsApplication, pluginManager: pluginManager]
+    }
+
+    def testContentNegotiation() {
+        respond([message: 'this is a test'], view: 'testContentNegotiation')
     }
 }
